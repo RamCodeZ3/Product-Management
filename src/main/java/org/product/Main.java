@@ -1,12 +1,14 @@
 package org.product;
 
 import org.product.dao.ProductDao;
+import org.product.models.ProductModel;
 
 public class Main {
     public static void main(String[] args) {
         var dao = new ProductDao();
+        dao.deleteProductById(5);
         var products = dao.getProducts();
-        var product = dao.getProduct(3);
+        var product = dao.getProductById(3);
         System.out.println(product.name);
 
         for (var p : products) {
