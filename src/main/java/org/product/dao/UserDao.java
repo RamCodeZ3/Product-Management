@@ -23,7 +23,6 @@ public class UserDao {
                         rs.getInt("id"),
                         rs.getString("username"),
                         rs.getString("email"),
-                        rs.getString("password"),
                         rs.getString("role")
                 );
                 users.add(user);
@@ -47,7 +46,6 @@ public class UserDao {
                         rs.getInt("id"),
                         rs.getString("username"),
                         rs.getString("email"),
-                        rs.getString("password"),
                         rs.getString("role")
                 );
             } else throw new RuntimeException("Usuario no encontrado");
