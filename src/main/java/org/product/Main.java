@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         var dao = new ProductDao();
         dao.deleteProductById(5);
-        var products = dao.getProducts();
+        var products = dao.getAllProducts();
         var product = dao.getProductById(3);
         System.out.println(product.name);
 

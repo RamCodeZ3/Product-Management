@@ -10,11 +10,12 @@ import org.product.models.ProductModel;
 
 public class ProductDao {
 
-    public List<ProductModel> getProducts(){
+    public List<ProductModel> getAllProducts(){
         var products = new ArrayList<ProductModel>();
 
         try(Connection connection = ConnectionDB.connection();
-            Statement statement = connection.createStatement()){
+            Statement statement = connection.createStatement()
+        ){
             ResultSet rs = statement.executeQuery("SELECT * FROM products");
 
             while(rs.next()){
@@ -39,7 +40,8 @@ public class ProductDao {
     public ProductModel getProductById(int id){
 
         try(Connection connection = ConnectionDB.connection();
-            Statement statement = connection.createStatement()){
+            Statement statement = connection.createStatement()
+        ){
             ResultSet rs = statement.executeQuery("SELECT * FROM products WHERE id = " + id);
 
             if (rs.next()){
